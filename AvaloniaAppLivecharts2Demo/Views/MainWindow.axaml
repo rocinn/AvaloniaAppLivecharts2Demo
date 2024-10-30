@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaAppLivecharts2Demo.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaAppLivecharts2Demo.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaAppLivecharts2Demo">
+  <DockPanel>
+    <WrapPanel DockPanel.Dock="Top">
+      <Button Content="Series1" Command="{Binding AddSeries1}"/>
+      <Button Content="Series2" Command="{Binding AddSeries2}"/>
+      <Button Content="Series2" Command="{Binding AddSeries3}"/>
+    </WrapPanel>
+
+    <lvc:CartesianChart Series="{Binding Series}" XAxes="{Binding XAxes}" ZoomMode="X" LegendPosition="Bottom"/>
+
+  </DockPanel>
+</Window>
